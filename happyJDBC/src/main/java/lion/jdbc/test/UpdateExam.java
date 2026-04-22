@@ -1,4 +1,4 @@
-package lion.jdbc;
+package lion.jdbc.test;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
