@@ -81,7 +81,7 @@ public class StudentManagementSystem {
         for (Student s : students) {
             if(s.getName().equals("김민지")){
                 s.updateAge(22);
-                s.updateGpa(3.3FFFF);
+                s.updateGpa(3.3F);
             }
         }
             for (Student s : students){
