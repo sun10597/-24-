@@ -88,8 +88,8 @@ public class StudentManagementSystem {
             s.displayInfo();
         }
 
-//        Student student = new Student("김선우", 25, 3.5);
-//        Student s1 = new Student("김선우");
+//        Student1 student = new Student1("김선우", 25, 3.5);
+//        Student1 s1 = new Student1("김선우");
 //        student.displayInfo();
 //        s1.displayInfo();
 //
