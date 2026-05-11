@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서비스 - MY PROJECT</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans KR', sans-serif; background: #f5f5f5; line-height: 1.6; }
+
+        /* 네비게이션 바[cite: 2] */
+        .navbar { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 0 20px; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 60px; }
+        .nav-logo { color: white; font-size: 1.5rem; font-weight: bold; text-decoration: none; }
+        .nav-menu { display: flex; list-style: none; }
+        .nav-item { margin-left: 30px; }
+        .nav-link { color: white; text-decoration: none; padding: 8px 16px; border-radius: 4px; }
+
+        /* 서비스 카드 섹션 */
+        .service-header { text-align: center; padding: 60px 20px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px 60px; }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .card-body { padding: 30px; text-align: center; }
+        .icon-box { 
+            width: 70px; height: 70px; background: #f0f2ff; border-radius: 50%; 
+            margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; color: #667eea;
+        }
+        .card-title { margin-bottom: 15px; color: #333; }
+        .card-text { color: #666; margin-bottom: 25px; }
+        .card-button {
+            background: #667eea; color: white; border: none; padding: 10px 25px;
+            border-radius: 20px; cursor: pointer; transition: 0.3s;
+        }
+        .card-button:hover { background: #764ba2; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="Exam4.html" class="nav-logo">LOGO</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="Exam4.html" class="nav-link">홈</a></li>
+                <li class="nav-item"><a href="Exam7.html" class="nav-link">소개</a></li>
+                <li class="nav-item"><a href="Exam8.html" class="nav-link active" style="background:rgba(255,255,255,0.3)">서비스</a></li>
+                <li class="nav-item"><a href="Exam6.html" class="nav-link">로그인</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="service-header">
+        <h1>제공 서비스</h1>
+        <p>전문적인 솔루션으로 비즈니스 성장을 돕습니다.</p>
+    </div>
+
+    <div class="container">
+        <div class="service-grid">
+            <!-- 서비스 카드 1[cite: 1] -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="icon-box">💻</div>
+                    <h3 class="card-title">웹 개발</h3>
+                    <p class="card-text">최신 기술 스택을 활용한 반응형 웹사이트 제작 서비스를 제공합니다.</p>
+                    <button class="card-button">문의하기</button>
+                </div>
+            </div>
+            <!-- 서비스 카드 2[cite: 1] -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="icon-box">🎨</div>
+                    <h3 class="card-title">UI/UX 디자인</h3>
+                    <p class="card-text">사용자 경험을 최우선으로 생각하는 감각적인 디자인을 제안합니다.</p>
+                    <button class="card-button">문의하기</button>
+                </div>
+            </div>
+            <!-- 서비스 카드 3[cite: 1] -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="icon-box">📊</div>
+                    <h3 class="card-title">마케팅 분석</h3>
+                    <p class="card-text">데이터 기반의 마케팅 전략을 통해 효율적인 성과를 도출합니다.</p>
+                    <button class="card-button">문의하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
