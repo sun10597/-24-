@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="06.html">
+        이름 : <input type="text" name="name"> <br>
+        비밀번호 : <input type="password" name="password"> <br>
+        비밀번호 확인 : <input type="password" name="checkPassword"> <br>
+        
+        <input type="submit" value="등록">
+    </form>
+
+    <script>
+        const form = document.querySelector('form');
+
+        form.addEventListener('submit', (e)=>{
+            const name = document.querySelector('input[name="name"]');
+            const password = document.querySelector('input[name="password"]');
+            const checkPassword = document.querySelector('input[name="checkPassword"]');
+    
+            if(name.value == ''){
+                alert('이름을 입력해주세요.');
+                name.focus();
+                e.preventDefault();
+            }else if(password.value == ''){
+                alert('비밀번호를 입력해주세요.');
+                password.focus();
+                e.preventDefault();
+            }else if(checkPassword.value == ''){
+                alert('비밀번호 확인을 입력해주세요.');
+                checkPassword.focus();
+                e.preventDefault();
+            }else if(password.value != checkPassword.value){
+                alert('비밀번호가 일치하지 않습니다.');
+                checkPassword.focus();
+                e.preventDefault();
+            }
+        })
+
+    </script>
+</body>
+</html>
