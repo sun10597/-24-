@@ -1,0 +1,6 @@
+spring:
+  application:
+    nameiocexam
+
+#  profiles:
+#    active: dev
