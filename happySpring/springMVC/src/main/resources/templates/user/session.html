@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>세션목록보기</title>
+</head>
+<body>
+    <li th:each="session:${sessions}">
+        <span th:text="${session.key}"></span>:::
+        <span th:text="${session.value}"></span>
+    </li>
+</body>
+</html>

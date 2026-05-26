@@ -1,0 +1,43 @@
+//package org.example.springmvc.config;
+//
+//import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
+//import org.springframework.context.annotation.Bean;
+//import org.springframework.context.annotation.Configuration;
+//import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+//import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
+//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+//import org.springframework.security.web.SecurityFilterChain;
+//
+//@Configuration
+//public class SecurityConfig {
+//    @Bean
+//    public BCryptPasswordEncoder bCryptPasswordEncoder(){
+//        return new BCryptPasswordEncoder();
+//    }
+//
+//    @Bean
+//    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+//
+//        // 1. CSRF 보호 비활성화 (테스트 및 개발 편의를 위해 우선 해제)
+//        http.csrf(csrf -> csrf.disable());
+//
+//        // 2. URL별 권한 설정 (자물쇠 풀기)
+//        http.authorizeHttpRequests(authorize -> authorize
+//                // /join, /joinProc, /index 같은 주소는 로그인 안 해도 누구나(permitAll) 접근 가능하게 설정
+//                .requestMatchers("/", "/user/join", "/user/joinProc", "/index", "/css/**", "/js/**").permitAll()
+//                // 그 외의 모든 요청(anyRequest)은 로그인 인증(authenticated)을 받아야만 접근 가능
+//                .anyRequest().authenticated()
+//        );
+//
+//        // 3. 커스텀 로그인 페이지 설정
+//        http.formLogin(form -> form
+//                .loginPage("/user/join") // 시큐리티가 제공하는 기본 페이지 대신 사용할 로그인 URL
+//                .loginProcessingUrl("/user/joinProc") // 로그인 폼 action 주소와 일치해야 함
+//                .defaultSuccessUrl("/") // 로그인 성공 시 이동할 주소
+//                .permitAll()
+//
+//        );
+//
+//        return http.build();
+//    }
+//}
