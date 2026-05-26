@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>연락처 폼</title>
+</head>
+<body>
+<h2>연락처 폼</h2>
+
+<form action="/contactProc" method="post">
+    <div>
+        <label for="name">이름</label><br>
+        <input type="text" id="name" name="name" required />
+    </div>
+    <br>
+    <div>
+        <label for="email">이메일</label><br>
+        <input type="email" id="email" name="email" required />
+    </div>
+    <br>
+    <div>
+        <label for="message">소개</label><br>
+        <textarea id="message" name="message"></textarea>
+    </div>
+    <br>
+    <button type="submit">제출하기</button>
+</form>
+</body>
+</html>

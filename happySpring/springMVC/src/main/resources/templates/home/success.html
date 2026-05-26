@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>연락처</title>
+</head>
+<body>
+<h3>연락처</h3>
+<div th:if="${dto}">
+    <p><strong>이름:</strong> <span th:text="${dto.name}"></span></p>
+    <p><strong>이메일:</strong> <span th:text="${dto.email}"></span></p>
+    <p><strong>소개:</strong> <span th:text="${dto.message}"></span></p>
+</div>
+
+<br>
+<a th:href="@{/contact}">다시 작성하기</a>
+
+<input type="hidden" id="msg" th:value="${msg}" />
+
+<script>
+    window.onload = function() {
+        var msg = document.getElementById("msg").value;
+        if (msg) {
+            alert(msg);
+        }
+    }
+</script>
+</body>
+</html>

@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 
 @Controller
 public class HelloController {
-    @GetMapping("/")
+    @GetMapping("/p")
     public String hello(){
         return "/hello/hello";
     }
