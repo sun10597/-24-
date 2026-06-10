@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>게시글 목록</title>
+    <link rel="stylesheet" th:href="@{/friend.css}">
+</head>
+<body>
+<h1>게시글 목록</h1>
+
+<p><a th:href="@{/articles/add}">[새 글 쓰기]</a></p>
+
+<table>
+    <thead>
+    <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+        <th>작성일</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="article : ${articles.content}">
+        <td th:text="${article.id}">1</td>
+        <td>
+            <a th:href="@{/articles/{id}(id=${article.id})}" th:text="${article.title}">제목</a>
+        </td>
+        <td th:text="${article.writer}">작성자</td>
+        <td th:text="${#temporals.format(article.createdAt, 'yyyy-MM-dd HH:mm')}">2026-06-01</td>
+    </tr>
+    </tbody>
+</table>
+
+<div>
+    <span th:if="${articles.hasPrevious()}">
+        <a th:href="@{/articles(page=${articles.number - 1})}">이전</a>
+    </span>
+    <span th:text="${articles.number + 1} + ' / ' + ${articles.totalPages}">1 / 1</span>
+    <span th:if="${articles.hasNext()}">
+        <a th:href="@{/articles(page=${articles.number + 1})}">다음</a>
+    </span>
+</div>
+
+<script th:inline="javascript">
+    var errorMessage = [[${msg}]];
+    if (errorMessage) {
+        alert(errorMessage);
+    }
+</script>
+
+</body>
+</html>

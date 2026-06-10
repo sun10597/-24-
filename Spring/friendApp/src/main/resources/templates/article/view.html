@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>게시글 보기</title>
+    <link rel="stylesheet" th:href="@{/friend.css}">
+</head>
+<body>
+<h1>게시글 상세 보기</h1>
+
+<div>
+    <p><strong>번호:</strong> <span th:text="${article.id}"></span></p>
+    <p><strong>작성자:</strong> <span th:text="${article.writer}"></span></p>
+    <p><strong>작성일:</strong> <span th:text="${#temporals.format(article.createdAt, 'yyyy-MM-dd HH:mm')}"></span></p>
+    <p><strong>제목:</strong> <span th:text="${article.title}"></span></p>
+    <hr>
+    <p><strong>내용:</strong></p>
+    <div style="white-space: pre-wrap;" th:text="${article.content}">내용</div>
+</div>
+
+<hr>
+<div style="display: flex; gap: 10px;">
+    <a th:href="@{/articles/{id}/edit(id=${article.id})}"><button type="button">수정하기</button></a>
+
+    <form th:action="@{/articles/{id}/delete(id=${article.id})}" method="post"
+          onsubmit="return confirm('정말 삭제하시겠습니까?');">
+        <button type="submit" style="color: red;">삭제하기</button>
+    </form>
+
+    <a th:href="@{/articles}">목록으로</a>
+</div>
+
+</body>
+</html>

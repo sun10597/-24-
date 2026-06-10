@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>친구 등록</title>
+</head>
+<body>
+<h1>친구 등록하기</h1>
+
+<form th:action="@{/friends/addProc}" method="post">
+    <div>
+        <label for="name">이름 : </label>
+        <input type="text" id="name" name="name" placeholder="이름을 입력하세요" required>
+    </div>
+    <br>
+    <div>
+        <label for="email">이메일 : </label>
+        <input type="email" id="email" name="email" placeholder="이메일을 입력하세요" required>
+    </div>
+    <br>
+    <button type="submit">등록하기</button>
+    <a th:href="@{/friends}">취소</a>
+</form>
+</body>
+</html>

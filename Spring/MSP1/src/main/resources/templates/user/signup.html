@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MSP - 회원가입</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #e75151; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .box { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 300px; }
+        h2 { text-align: center; color: #3c3c3c; }
+        input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background-color: #3c3c3c; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        button:hover { background-color: #2c2c2c; }
+    </style>
+</head>
+<body>
+<div class="box">
+    <h2>MSP 회원가입</h2>
+    <form action="/users/signupProc" method="post">
+        <input type="email" name="email" placeholder="이메일" required>
+        <input type="password" name="password" placeholder="비밀번호" required>
+        <input type="text" name="name" placeholder="이름(닉네임)" required>
+        <button type="submit">가입하기</button>
+    </form>
+</div>
+</body>
+</html>

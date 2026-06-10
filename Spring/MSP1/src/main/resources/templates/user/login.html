@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MSP - 로그인</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #e75151; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .box { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 300px; }
+        h2 { text-align: center; color: #3c3c3c; }
+        input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background-color: #3c3c3c; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        a { display: block; text-align: center; margin-top: 15px; color: #666; text-decoration: none; font-size: 14px; }
+    </style>
+</head>
+<body>
+<div class="box">
+    <h2>MSP LOGIN</h2>
+    <form action="/users/loginProc" method="post">
+        <input type="email" name="email" placeholder="이메일" required>
+        <input type="password" name="password" placeholder="비밀번호" required>
+        <button type="submit">로그인</button>
+    </form>
+    <a href="/users/signup">아직 계정이 없으신가요? 회원가입</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MSP - 친구</title>
+    <style>
+        body { font-family: 'Malgun Gothic', sans-serif; background-color: #f5f5f5; margin: 0; padding: 20px; display: flex; justify-content: center; }
+        .phone { background: white; width: 360px; height: 600px; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); display: flex; flex-direction: column; overflow: hidden; }
+        .header { background: #fafafa; padding: 20px; font-size: 20px; font-weight: bold; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+        .logout-btn { font-size: 12px; color: #999; text-decoration: none; border: 1px solid #ccc; padding: 3px 8px; border-radius: 4px; }
+        .content { flex: 1; overflow-y: auto; padding: 20px; }
+        .section-title { font-size: 12px; color: #868686; margin-bottom: 10px; }
+        .profile-item { display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid #f9f9f9; }
+        .avatar { width: 45px; height: 45px; background: #e0e0e0; border-radius: 15px; margin-right: 15px; display: flex; justify-content: center; align-items: center; font-weight: bold; color: #555; }
+        .name { font-size: 15px; font-weight: bold; color: #333; }
+        .divider { height: 1px; background: #eee; margin: 15px 0; }
+    </style>
+</head>
+<body>
+<div class="phone">
+    <div class="header">
+        <span>친구</span>
+        <a href="/users/logout" class="logout-btn">로그아웃</a>
+    </div>
+
+    <div class="content">
+        <div class="section-title">내 프로필</div>
+        <div class="profile-item">
+            <div class="avatar" th:text="${#strings.substring(loginUser.name,0,1)}">나</div>
+            <div class="name" th:text="${loginUser.name}">내 이름</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section-title" th:text="'친구 ' + ${myF.size()} + '명'">친구 0명</div>
+        <div th:each="friend : ${myF}" class="profile-item">
+            <div class="avatar" th:text="${#strings.substring(friend.name,0,1)}" style="background: #e1f5fe;">친</div>
+            <div class="name" th:text="${friend.name}">진짜 친구 이름</div>
+        </div>
+
+        <div class="divider" th:if="${!reF.isEmpty()}"></div>
+
+        <div class="section-title" th:if="${!reF.isEmpty()}">알 수도 있는 사람 (추천)</div>
+        <div th:each="user : ${reF}" class="profile-item" style="justify-content: space-between;">
+            <div style="display: flex; align-items: center;">
+                <div class="avatar" th:text="${#strings.substring(user.name,0,1)}">추</div>
+                <div class="name" th:text="${user.name}">추천 유저 이름</div>
+            </div>
+            <form action="/friends/addProc" method="post" style="margin: 0;">
+                <input type="hidden" name="userId" th:value="${user.id}">
+                <button type="submit" style="background: #e75151; border: 1px solid #e75151; padding: 3px 8px; border-radius: 4px; font-size: 12px; cursor: pointer; font-weight: bold;">추가</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

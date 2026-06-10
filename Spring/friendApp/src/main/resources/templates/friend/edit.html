@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>친구 정보 수정</title>
+</head>
+<body>
+<h1>친구 정보 수정하기</h1>
+
+<form th:action="@{/friends/{id}/editProc(id=${friend.id})}" method="post">
+
+    <input type="hidden" name="id" th:value="${friend.id}">
+
+    <div>
+        <label for="name">이름 : </label>
+        <input type="text" id="name" name="name" th:value="${friend.name}" required>
+    </div>
+    <br>
+    <div>
+        <label for="email">이메일 : </label>
+        <input type="email" id="email" name="email" th:value="${friend.email}" required>
+    </div>
+    <br>
+    <button type="submit">수정 완료</button>
+    <a th:href="@{/friends/{id}(id=${friend.id})}">취소</a>
+</form>
+</body>
+</html>
