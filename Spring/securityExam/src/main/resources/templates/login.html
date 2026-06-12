@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="kr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>login</title>
+</head>
+<body>
+    <form th:action="@{/loginProc}" method="post">
+        <input type="hidden" name="_csrf" th:value="${_csrf.token}">
+
+        <label for="name">이  름 : </label>
+        <input type="text" id="name" name="name"><br>
+        <label for="password">비민번호 : </label>
+        <input type="password" id="password" name="password"><br>
+        <input type="submit" value="로그인">
+    </form>
+</body>
+</html>
