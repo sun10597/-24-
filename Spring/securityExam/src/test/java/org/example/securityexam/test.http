@@ -6,3 +6,9 @@ Accept: */*
 ###
 GET http://localhost:8080
 Optional-WWW-Authenticate:
+
+###
+POST http://localhost:8080/logoutProc
+
+###
+GET http://localhost:8080/logoutProc

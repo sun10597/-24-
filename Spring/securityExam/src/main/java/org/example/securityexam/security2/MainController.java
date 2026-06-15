@@ -15,4 +15,9 @@ public class MainController {
         return "login";
     }
 
+    @GetMapping("/loginFail")
+    public String loginFail(){
+        return "loginFail";
+    }
+
 }

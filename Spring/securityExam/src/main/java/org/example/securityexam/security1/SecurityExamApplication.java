@@ -1,4 +1,4 @@
-package org.example.securityexam;
+package org.example.securityexam.security1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
