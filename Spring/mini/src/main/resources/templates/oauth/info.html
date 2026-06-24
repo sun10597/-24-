@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Info</title>
+</head>
+<body>
+<h2>User Information</h2>
+<h2>사용자 정보</h2>
+<p>아이디: <span th:text="${user.username}"></span></p>
+<p>권한: <span th:text="${user.authorities}"></span></p>
+
+<a href="/">Home</a><br>
+<a href="/logout">Logout</a>
+</body>
+</html>
