@@ -1,10 +1,10 @@
-package com.example.swaggerexam.entity;
+package com.example.todoapp.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import org.hibernate.validator.constraints.CodePointLength;
 
 import java.time.LocalDateTime;
 
