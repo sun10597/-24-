@@ -1,0 +1,41 @@
+import { useState } from "react";
+import TodoList from "./TodoList";
+import TodoInput from "./todoItem/TodoInput";
+let nextId = 4;
+
+function TodoComponent(){
+    const [todos, setTodos] = useState([
+        { id:1, text:"리엑트 공부하기", completed:true},
+        { id:2, text:"쉬기", completed:true},
+        { id:3, text:"밥먹기", completed:false},
+        { id:4, text:"게임하기", completed:false}
+    ]);
+
+    const handleDelete = (id) => {
+        setTodos(todos.filter((todo)=>todo.id !== id));
+    };
+
+    const handleToggle = (id) => {
+        setTodos(todos.map((todo)=>
+                    todo.id === id ? {...todo, completed: !todo.completed} : todo));
+    };
+
+    const handleCreate = (text) => {
+        const newTodo = {
+            id: ++nextId,
+            text: text,
+            completed: false
+        };
+        setTodos([newTodo, ...todos]);
+    };
+
+    return(
+        <div style={{padding: "20px"}}>
+            <h1>할 일 목록</h1>
+            <TodoInput onCreate={handleCreate}/>
+            <TodoList todos={todos} onDelete={handleDelete} onToggle={handleToggle}/>
+        </div>
+    )
+}
+
+export default TodoComponent;
