@@ -1,0 +1,8 @@
+docker run -d  ^
+  --name local-mysql  ^
+  -e MYSQL_ROOT_PASSWORD=root1234  ^
+  -e MYSQL_DATABASE=tododb  ^
+  -e MYSQL_USER=todouser  ^
+  -e MYSQL_PASSWORD=todo1234  ^
+  -p 3307:3306  ^
+  mysql:8.0
